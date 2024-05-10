@@ -1,0 +1,51 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>org.example.SanityCheck</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>SanityCheck</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="support@ike.com" url="https://www.yourcompany.com">Ike</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    An AI powered sanity check to make sure your comments describe what your code actually does.<br>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+        <localInspection displayName="Hello World usage inspection"
+                         groupPath="Java"
+                         language="JAVA"
+                         groupName="Verbose code"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="org.example.sanitycheck.HelloWorldInspection"/>
+
+        <!-- localInspection displayName="Sanity check"
+                         groupPath="Java"
+                         groupName="Verbose code"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         implementationClass="org.example.sanitycheck.SanityCheck"/-->
+
+        <annotator
+                language="JAVA"
+                implementationClass="org.example.sanitycheck.SanityCheck"/>
+
+        <applicationConfigurable groupId="tools" displayName="Sanity Check"
+                                 instance="org.example.sanitycheck.SanityCheckConfigurable"/>
+        <applicationService serviceImplementation="org.example.sanitycheck.SanityCheckSettings"/>
+    </extensions>
+
+</idea-plugin>
