@@ -35,6 +35,12 @@ class DeleteElementQuickFix extends BaseIntentionAction {
         return true;
     }
 
+    /** Deletes the element
+     * @param project The project, not used
+     * @param editor The editor, not used
+     * @param file The file, not used
+     * @throws IncorrectOperationException
+     */
     @Override
     public void invoke(@NotNull final Project project, final Editor editor, PsiFile file) throws
             IncorrectOperationException {
