@@ -16,8 +16,8 @@ Plugin output: this code will print the numbers 0 to 9, not 1 to 10.
 
 ### Requirements:
 
-- Ollama running on localhost at the default port, this can be changed in the langchainllmprovider 
-- An OpenAI API key to use OpenAI language models. This should be placed in the CONFIG.py file 
+- To use local language models: Ollama running on localhost at the default port, this can be changed in the langchainllmprovider 
+- To use OpenAI language models: An OpenAI API key. This should be placed in the CONFIG.py file 
 ```"OPENAI_API_KEY": "YOUR API KEY"```
 - Support for other language models/hosting platforms can be added by adding more llm providers and updating the code in app.py to use them.
 - Redis server running on localhost:6379, or the port specified in app.py file. 
@@ -47,3 +47,8 @@ graph TD
 Example of the plugin in action:
 
 ![img.png](img.png)
+
+Known issues:
+- We are using soon to be deprecated option to annotate the code. I am working on getting the new options to work
+- Multiline comments will have separate warnings for each line
+- Lack of test coverage, this is a work in progress
