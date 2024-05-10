@@ -12,7 +12,9 @@ for (int i = 0; i < 10; i++) {
 
 Plugin output: this code will print the numbers 0 to 9, not 1 to 10.
 
-**WARNING**: This plugin is in development and often gives incorrect results. This code is provided 'as is' and should be regarded as a proof of concept and nothing more.
+**WARNING:** This plugin is in development and often gives incorrect results. This code is provided 'as is' and should be regarded as a proof of concept and nothing more.
+
+**WARNING:** This plugin has only been tested on IDEA in the development environment. It may not work in other environments.
 
 ### Requirements/Recommendations:
 
